@@ -1,24 +1,40 @@
+package ru.gorshckov;
 public class Main {
+
+    
     public static void main(String[] args) {
-        Animal[] animals = {
-                new Cat(5, 3),
-                new Dog(5, 10, 2),
-                new Duck(3, 10)
-        };
 
-        Obstacle[] obstacles = {new Road(8), new Water(3), new Wall(3)};
+        Obstacle[] obstacles = {new Road(2), new Water(3), new Wall(3)};
 
-        for (Obstacle ob : obstacles) {
-            for (Animal al2 : animals) {
-                ob.doIt(al2);
-            }
-        }
+        Animal[] animals1 = {new Cat(4, 3),
+                             new Dog(5, 11, 2),
+                             new Duck(6, 10)};
+
+        Animal[] animals2 = {new Cat(40, 3),
+                             new Cat(5, 100),
+                              new Duck(60, 10)};
 
 
-        for (Animal al2 : animals) {
-            System.out.println(al2.getName() + " on distance " + al2.isOnDistance());
-        }
+        Course course = new Course(obstacles,animals1);
+
+        Team team1 = new Team("snow",animals1);
+
+        Team team2 = new Team ("rain",animals2);
+
+        team1.showAllMembers();
+        course.doIt(team1);
+        team1.showResult();
+
+        System.out.println("========");
+
+        team2.showAllMembers();
+        course.doIt(team2);
+        team2.showResult();
+
+
 
     }
+
+
 
 }
