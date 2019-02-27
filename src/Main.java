@@ -1,6 +1,7 @@
 package ru.gorshckov;
 public class Main {
 
+    
     public static void main(String[] args) {
 
         Obstacle[] obstacles = {new Road(2), new Water(3), new Wall(3)};
